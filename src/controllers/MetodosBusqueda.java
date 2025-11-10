@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Persona;
 import views.ShowConsole;
 
 public class MetodosBusqueda {
@@ -8,6 +9,7 @@ public class MetodosBusqueda {
     private ShowConsole showConsole;
 
     public MetodosBusqueda() {
+        /* 
         this.arreglo = new int[]{10,11,-2,5,6,8,15,22};
         this.showConsole =  new ShowConsole();
         showConsole.printArray(arreglo);
@@ -25,10 +27,10 @@ public class MetodosBusqueda {
         showConsole.printResultO(100,result4);
         Integer result5 = busquedaLinealObj(10);
         showConsole.printResultO(10,result5);
-        
+        */
 
     }
-
+    /* 
     // retorna la posicion del valor(clave) buscado sino encunetra retorna -1 
     public int busquedaLineal( int clave){
         for(int i=0;i < arreglo.length;i++){
@@ -61,6 +63,41 @@ public class MetodosBusqueda {
         }
         return null;
 
+    }
+    */
+
+    public Persona searchPersonaByName(Persona[] personas, String name){
+        for (Persona persona : personas) {
+            if(persona.getName().equals(name)){
+                return persona;
+            }
+          
+        }
+        return null;
+
+    }
+    // por edad 
+    // Encontrar una persona que sea mayor de: age
+    // y la edad sea impar
+    public Persona findPersonByAge(Persona[] personas, int age){
+        for (Persona persona : personas) {
+            if(persona.getAge() > age && persona.getAge() % 2 != 0){
+                return persona;
+            }
+            
+        }
+        
+        return null;
+    }
+
+    public Persona findPersonByValueName(Persona[] personas, int i ){
+        for (Persona persona : personas) {
+            if(persona.getValue() == i){
+                return persona;
+            }
+            
+        }
+        return null;
     }
 
     

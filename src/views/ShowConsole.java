@@ -1,5 +1,7 @@
 package views;
 
+import models.Persona;
+
 public class ShowConsole {
 
 
@@ -39,7 +41,31 @@ public class ShowConsole {
         } else {
             System.out.println("El {"+ numeroBuscado+ "} se encontro ");
         }
-}
+    }
+    public void showPersonResult(Persona persona, String name){
+        System.out.println(
+            (persona !=  null)
+            ? "Se encontro a " + persona
+            : " No se encontro a una persona con el nombre -> " + name);
+        
+        
+    }
+    public void showPersonResult(Persona persona, int age){
+        System.out.println( 
+            (persona != null) ?
+            "Persona encontrada " + persona.getName() + ", edad " + persona.getAge() : 
+            "No se encontro ninguna persona mayor a " + age + "con edad impar."
+            );
+
+    }
+    public void showPersonResult(Persona persona, int i, String valueNombre){
+        System.out.println(
+            (persona != null) ? 
+            "Persona #" + i + " encontrada: " + persona.getName() + ", valor: " + valueNombre :
+            "No se encontró ninguna persona con ese valor en el índice: " + i
+        );
+
+    }
     
 
 
