@@ -89,16 +89,26 @@ public class MetodosBusqueda {
         
         return null;
     }
-
-    public Persona findPersonByValueName(Persona[] personas, int i ){
+    public Persona findPersonByValueName(Persona[] personas, int valorBuscado) {
         for (Persona persona : personas) {
-            if(persona.getValue() == i){
+            int valorNombre = calcularValorNombre(persona.getName());
+            if (valorNombre == valorBuscado) {
                 return persona;
             }
-            
         }
         return null;
     }
+
+    
+    private int calcularValorNombre(String nombre) {
+        int suma = 0;
+        for (char c : nombre.toCharArray()) {
+            suma += (int) c;
+        }
+        return suma;
+    }
+
+    
 
     
 

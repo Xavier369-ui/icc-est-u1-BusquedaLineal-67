@@ -58,13 +58,13 @@ public class ShowConsole {
             );
 
     }
-    public void showPersonResult(Persona persona, int i, String valueNombre){
-        System.out.println(
-            (persona != null) ? 
-            "Persona #" + i + " encontrada: " + persona.getName() + ", valor: " + valueNombre :
-            "No se encontró ninguna persona con ese valor en el índice: " + i
-        );
-
+    public void showPersonResult(Persona persona, int valor, String valueNombre) {
+        if (persona != null) {
+            System.out.println("Persona encontrada con valor de nombre " + valor + ": " 
+                + persona.getName() + " (" + persona.getAge() + ")");
+        } else {
+            System.out.println("No se encontró ninguna persona con valor de nombre " + valor);
+        }
     }
     
 
